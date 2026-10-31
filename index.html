@@ -228,8 +228,8 @@
   .member p{color:#cfe0f3;font-size:.97rem;margin-top:12px}
 
   /* Testimonials */
-  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .t-card{border:2px dashed #9fc6e3;border-radius:22px;padding:26px;background:var(--sky-3)}
+  .t-grid{columns:3;column-gap:22px}
+  .t-card{border:2px dashed #9fc6e3;border-radius:22px;padding:26px;background:var(--sky-3);break-inside:avoid;margin-bottom:22px;display:inline-block;width:100%}
   .stars{color:#f5a623;letter-spacing:3px;font-size:1.1rem}
   .t-card blockquote{margin:12px 0 18px;color:var(--ink-2);font-style:italic}
   .t-card .who{display:flex;align-items:center;gap:12px;font-size:.95rem}
@@ -304,6 +304,7 @@
   .reveal.in{opacity:1;transform:none}
 
   @media (max-width:1024px){
+    .t-grid{columns:2}
     .prob-grid{grid-template-columns:repeat(2,1fr)}
     .svc-grid{grid-template-columns:repeat(2,1fr)}
     .f-grid{grid-template-columns:1fr 1fr}
@@ -325,7 +326,8 @@
     .facts{grid-template-columns:repeat(3,1fr)}
     .steps{grid-template-columns:repeat(2,1fr);row-gap:36px}
     .steps::before{display:none}
-    .t-grid,.team-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:1fr}
+    .t-grid{columns:1}
     .cta-box{padding:38px 26px}
     section{padding:70px 0}
   }
@@ -572,15 +574,20 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS: replace the three placeholder cards with real patient reviews before going live -->
 <section id="reviews">
   <div class="wrap">
     <div class="banner reveal"><span class="bars"></span><h2>What Our Patients Say</h2><span class="bars r"></span></div>
     <p class="sec-sub reveal">Real experiences from people we've helped.</p>
     <div class="t-grid">
-      <div class="t-card reveal"><div class="stars">★★★★★</div><blockquote>[Add a real patient review here — 2 to 3 lines about their experience.]</blockquote><div class="who"><div class="avatar">A</div><div><strong>[Patient name]</strong><span>[Condition, e.g. Heel pain]</span></div></div></div>
-      <div class="t-card reveal"><div class="stars">★★★★★</div><blockquote>[Add a real patient review here — 2 to 3 lines about their experience.]</blockquote><div class="who"><div class="avatar">B</div><div><strong>[Patient name]</strong><span>[Condition, e.g. Flat feet]</span></div></div></div>
-      <div class="t-card reveal"><div class="stars">★★★★★</div><blockquote>[Add a real patient review here — 2 to 3 lines about their experience.]</blockquote><div class="who"><div class="avatar">C</div><div><strong>[Patient name]</strong><span>[Condition, e.g. Diabetic foot care]</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I had a flat left foot with pain while walking. After consulting Dr. Veena, I was advised corrective footwear. Now I am able to go for walks and exercise without any issue. I strongly recommend anyone with similar problems to consult this clinic for excellent service and corrective measures.”</blockquote><div class="who"><div class="avatar">PG</div><div><strong>Prabhakar Gollapalli</strong><span>Flat foot</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I'm an engineer based in Bengaluru and visited this foot care clinic for a callus on my right foot. They performed a 3D foot scan and pressure point analysis, and provided customised footwear with specially designed insoles. After using it regularly, the callus gradually reduced and completely disappeared within three weeks. I truly appreciate the team's accurate diagnosis, effective treatment and professional care.”</blockquote><div class="who"><div class="avatar">NB</div><div><strong>Nagaraja B</strong><span>Callus on the foot</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“State-of-the-art clinic for diabetic foot. They performed a 3D scan of the foot and the pressure points were identified. Dr. Veena personally takes care of every patient. I was happy with the treatment.”</blockquote><div class="who"><div class="avatar">MS</div><div><strong>Madhu Sudhan</strong><span>Diabetic foot care</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I am a working professional and my job demands long hours of standing. The footwear I used earlier would hurt my feet and lower back. Thanks to the footwear correction at the Orthotics &amp; Podiatry Clinic, I can stand and walk comfortably for long durations. I also liked that you can go through a few iterations of the footwear until you are really comfortable with it.”</blockquote><div class="who"><div class="avatar">PN</div><div><strong>Pratima Narayan</strong><span>Long hours of standing</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“My mother got treated here, and we are blessed to have a doctor like Dr. Veena. She is so caring and knowledgeable, and explained the treatment options very clearly. The office staff were professional and compassionate, and the facilities are modern and well maintained. Overall, we are impressed.”</blockquote><div class="who"><div class="avatar">KB</div><div><strong>Kathyayeni Basavarajaiah</strong><span>Mother's treatment</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“I highly recommend this clinic for anyone with diabetic foot. The shoe I got from here feels good to wear, looks good and is comfortable too. The hospitality and feedback from the doctor and staff is also appreciated.”</blockquote><div class="who"><div class="avatar">GH</div><div><strong>Gopal H S</strong><span>Diabetic foot care</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Spacious, bright and clean. Gait check and comfort check need space, and this is available here. Dr. Veena studied my entire history carefully, tests were done and new footwear obtained. I am happy I have a specialist who can help me with diabetic foot care through preventive measures. Do not ignore your feet while dealing with diabetes.”</blockquote><div class="who"><div class="avatar">KA</div><div><strong>Kumar Sathencheri Asthagiri</strong><span>Diabetic foot care</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Received very comfortable footwear, excellent for daily use. Top-class consultation as well. Overall very satisfied.”</blockquote><div class="who"><div class="avatar">PN</div><div><strong>Pranav Narayan</strong><span>Custom footwear</span></div></div></div>
+      <div class="t-card reveal"><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><blockquote>“Dr. Veena is a good doctor and the treatment is nice. The footwear is good.”</blockquote><div class="who"><div class="avatar">CM</div><div><strong>Dr. Chikkahejjaji Mahadev</strong><span>Consultation &amp; footwear</span></div></div></div>
     </div>
   </div>
 </section>
